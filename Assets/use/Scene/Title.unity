@@ -1248,7 +1248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadePanel: {fileID: 1668448101}
-  SceneName: Living
+  SceneName: Depict
 --- !u!114 &1668448104
 MonoBehaviour:
   m_ObjectHideFlags: 0
