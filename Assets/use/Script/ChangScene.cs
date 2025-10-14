@@ -14,9 +14,10 @@ public class ChangScene : MonoBehaviour
         StartCoroutine(DelayedSceneChange());
     }
 
+    //シーン変更を一定時間遅らせるコルーチン
     private IEnumerator DelayedSceneChange()
     {
-        yield return new WaitForSeconds(delayTime);
-        SceneManager.LoadScene(sceneName);
+        yield return new WaitForSeconds(delayTime); //指定時間待機
+        SceneManager.LoadScene(sceneName); //指定シーンに切り替え
     }
 }

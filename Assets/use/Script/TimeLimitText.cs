@@ -54,6 +54,7 @@ public class TimeLimitText : MonoBehaviour
         }
     }
 
+    //ˆê•¶Žš‚¸‚Â•\Ž¦
     IEnumerator TypeDisplay(string message)
     {
         isTyping = true;
