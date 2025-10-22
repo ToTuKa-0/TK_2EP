@@ -11,7 +11,7 @@ public class NormalText : MonoBehaviour
 
     [TextArea]
     [SerializeField, Tooltip("再大三行16文字")] private string[] MessageTexts; //複数の文章を配列で設定
-    [SerializeField, Tooltip("一文字ずつ表示する速さ")] public float MessageSpeed; //一文字ずつ表示する速さ
+    [SerializeField, Tooltip("一文字ずつ表示する速さ")] public float MessageSpeed = 0.05f; //一文字ずつ表示する速さ
 
     private int currentMessageIndex = 0; //現在のメッセージのインデックス
     private bool isTyping = false; //現在表示中かどうか
@@ -37,20 +37,20 @@ public class NormalText : MonoBehaviour
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-            if (hit.collider.gameObject == TriggerObject)
-                {
-                    isMassageActive = true; // メッセージ表示フラグON
-                    currentMessageIndex = 0; //最初のメッセージから
-                    allTextDisplayed = false; //完了時フラグリセット
-                    DialogText.text = ""; //テキスト初期化
+            if (hit.collider != null && hit.collider.gameObject == TriggerObject)
+            {
+                isMassageActive = true; // メッセージ表示フラグON
+                currentMessageIndex = 0; //最初のメッセージから
+                allTextDisplayed = false; //完了時フラグリセット
+                DialogText.text = ""; //テキスト初期化
 
-                    if (HideCanvas != null)
-                        HideCanvas.enabled = true; //キャンバス表示
-                    
+                if (HideCanvas != null)
+                    HideCanvas.enabled = true; //キャンバス表示
 
-                    StartCoroutine(TypeDisplay(MessageTexts[currentMessageIndex])); //最初のメッセージを表示
-                }
-            return; //他の入力を処理しない
+
+                StartCoroutine(TypeDisplay(MessageTexts[currentMessageIndex])); //最初のメッセージを表示
+            }
+                return; //他の入力を処理しない
         }
             //左クリックが押されたときの処理
             if (Input.GetMouseButtonDown(0) && isMassageActive)
