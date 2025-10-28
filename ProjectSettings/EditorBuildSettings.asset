@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/use/Scene/Hallway.unity
     guid: 28bd24eef673bbe43a56f84eddeea8d4
+  - enabled: 1
+    path: Assets/use/Scene/Sink.unity
+    guid: 11de27f7ae4a9ab46969e46131ce655c
+  - enabled: 1
+    path: Assets/use/Scene/BathRoom.unity
+    guid: 46c0f01a80b5e6643a1aeeaeddfbeea3
+  - enabled: 1
+    path: Assets/use/Scene/Toilet.unity
+    guid: d9514d54acc071d458e5817267a62afb
   m_configObjects: {}
